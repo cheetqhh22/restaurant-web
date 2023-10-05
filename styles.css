@@ -1,0 +1,454 @@
+* {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+	font-size: 1rem;
+	
+}
+
+/* nav bar */
+.label-nav {
+	display: none;
+	color: gray;
+}
+
+nav ul {
+	display: flex;
+	list-style-type: none;
+    text-align: right;
+	padding: 0.6rem;
+	gap: 2rem;
+}
+
+nav a {
+	text-decoration: none;
+	color: grey;
+}
+
+nav a:hover {
+	color: #161a1c;
+	text-decoration: none;
+	transform: scale(1.1);
+	transition: 0.7s;
+}
+
+@media screen and (max-width:800px) {
+	header {
+		align-items: center;
+	}
+
+	.label-nav {
+		display: block;
+		font-size: 1.2rem;
+	}
+
+	.label-nav:hover {
+		color: black;
+		scale: 1.1;
+		transition: 0.7s;
+	}
+	
+	nav {
+		position: absolute;
+		width: 150px;
+		background: #fff;
+		top: 1rem;
+		right: 0.5rem;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		visibility: hidden;
+		opacity: 0;
+		z-index: 9999;
+	}
+
+	nav .label-nav {
+		text-align: right;
+	}
+	nav ul {
+		flex-direction: column;
+		padding: 10px;
+	}
+
+	input:checked ~ nav {
+		visibility: visible;
+		opacity: 1;
+		transition: 0.5s;
+	}
+}
+
+/* footer */
+footer {
+	display: flex;
+	justify-content: space-around;
+	color: #161a1c;
+	font-size: 0.8rem;
+	margin-left: 2rem;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+}
+
+/***Home page***/
+
+/* img slides */
+.container {
+	padding: 2rem;
+}
+
+.slider-wrapper {
+	position: relative;
+	max-width: 70rem;
+	margin: 0 auto;
+	
+}
+
+.slider {
+	display: flex;
+	aspect-ratio: 16 / 9;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	box-shadow: 0 1.5rem 3rem -0.75rem #e2e6e8;
+	border-radius: 0.5rem;
+	-ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+	scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slider img {
+	flex: 1 0 100%;
+	scroll-snap-align: start;
+	object-fit: cover;
+}
+
+.slider-nav {
+	display: flex;
+	column-gap: 1rem;
+	position: absolute;
+	bottom: 1.25rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.slider-nav a {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: #fff;
+	opacity: 0.5;
+	transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+	opacity: 1;
+	scale: 1.1;
+}
+
+/* Our story */
+.story {
+	display: grid;
+	grid-template-rows: auto;
+	margin-left: 5rem;
+	margin-right: 5rem;
+}
+
+.story h1 {
+	text-align: center;
+	font-size: 2rem;
+	margin-top: 3rem;
+	color: #495e57;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.in-story {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	align-items: center;
+}
+
+.in-story h2 {
+	color:  #f4ce14;
+	font-size: 2rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+.in-story p {
+	max-width: 27rem;
+	position: relative;
+	color: grey;
+	font-style: italic;
+	font-size: 1rem;
+}
+
+.in-story p:hover {
+	color: #161a1c;
+	transition: 1s ease-in;
+}
+
+/***reccommended menu + Menu page***/
+.recommend-menu {
+	display: grid;
+	grid-template-rows: auto;
+	margin-left: 2rem;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+	align-items: center;
+	max-width: 70rem;
+	margin: 0 auto;
+}
+
+.recommend-menu h1 {
+	text-align: center;
+	font-size: 2rem;
+	padding: 2rem;
+	color: #495e57;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.menu h1 {
+	text-align: center;
+	font-size: 2rem;
+	padding: 2rem;
+	color: #495e57;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.menu{
+	margin: 0 auto;
+	max-width: 70rem;
+}
+
+.box-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 2rem;
+	color: #161a1c;
+}
+
+.box-container .box {
+	background-color: #f3f5f6;
+	border-radius: 0.5rem;
+	box-shadow: 0 1.5rem 3rem -0.75rem #e2e6e8;
+	text-align: left;
+	padding: 2rem 1rem;
+	font-size: 1rem;
+}
+
+
+.box-container .box img{
+	width: 100%;
+	border-radius: 0.5rem;
+	object-fit: cover;
+} 
+
+.box-container .box:hover {
+	transform: scale(1.02);
+	transition: 1s;
+}
+
+button {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	position: relative;
+	text-align: center;
+	font-size: 1rem;
+	background: #495e57;
+	color: #fff;
+	border-radius: 2rem;
+	padding: 10px 20px;
+	border-style: hidden;
+	cursor: pointer;
+}
+
+button:active {
+	transform: scale(0.96);
+}
+/* pre-reservation */
+.pre-reservations {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 3rem;
+	margin-left: 2rem;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+	position: relative;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 70rem;
+}
+
+.image-container {
+	overflow: hidden;
+	border-radius: 0.5rem;
+	max-width: 40rem;
+	box-shadow: 0 1.5rem 3rem -0.75rem #e2e6e8;
+} 
+
+.image-container .image-slider {
+	width: 100%;
+	display: flex;
+	animation: slide 18s infinite;
+}
+
+.image-container .image-slider img {
+	width: 100%;
+}
+
+
+.pre-reservations .open-hours h1 {
+	font-size: 2rem;
+	margin-bottom: 3rem;
+	color: #495e57;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.pre-reservations .open-hours p {
+	color: gray;
+	font-size: 1.1rem;
+}
+
+.pre-reservations .open-hours p:hover {
+	color: #161a1c;
+	transition: 1s ease;
+}
+
+
+@keyframes slide {
+	0% {
+		transform: translateX(0);
+	}
+	20% {
+		transform: translateX(0);
+	}	
+	40% {
+		transform: translateX(-100%);
+	}	
+	60% {
+		transform: translateX(-100%);
+	}
+	80% {
+		transform: translateX(-200%);
+	}	
+	100% {
+		transform: translateX(-200);
+	}		
+}
+
+/***Reservations page***/
+.reservations {
+	position: relative;
+	margin-left: 2rem;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+	align-items: center;
+	max-width: 35rem;
+	margin: 0 auto;
+	
+}
+
+.reservations .head-reservations {
+	text-align: center;
+	margin-bottom: 4rem;
+}
+
+.head-reservations h1 {
+	text-align: center;
+	font-size: 2rem;
+	padding: 0.5rem;
+	color: #495e57;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.head-reservations p {
+	font-size: 1rem;
+	color: #161a1c;
+}
+
+.reservations .info-reservations {
+	text-align: center;	
+	color: #161a1c;
+}
+
+.reservations .info-reservations .size-date-time {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 10rem;
+	margin-bottom: 2rem;
+	margin-left: 2rem;
+	margin-right: 2rem;	
+	padding: 2rem;
+	text-align: left;
+	align-items: center;
+}
+
+.reservations .info-reservations .customer-information {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin-top: 2rem;
+	margin-left: 2rem;
+	margin-right: 2rem;	
+	padding: 2rem;
+	height: 10rem;
+	text-align: left;
+	align-items: center;
+}
+
+.info-reservations label {
+	color: #161a1c;
+	font-size: 1rem;
+}
+
+.info-reservations fieldset {
+	border: 0.05rem solid;
+	border-radius: 0.5rem;
+}
+
+.info-reservations legend {
+	background-color: #e2e6e8;
+	border-radius: 0.5rem;
+	padding: 0.3rem;
+	color: #161a1c;
+	font-size: 1rem;
+}
+
+.info-reservations input {
+	width: auto;
+	height: 1.5rem;
+	border: 0;
+	outline: 0.1rem solid #e2e6e8;
+	border-radius: 0.5rem;
+}
+
+.info-reservations select {
+	width: auto;
+	height: 1.5rem;
+	border-color: #e2e6e8;
+	outline: 0.08rem solid #e2e6e8;
+	border-radius: 0.5rem;
+}
+
+.info-reservations input:focus {
+	outline: 0.08rem solid #161a1c;
+	transition: 1s;
+}
+
+.info-reservations select:focus {
+	outline: 0.08rem solid #161a1c;
+	transition: 1s;
+}
